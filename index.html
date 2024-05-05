@@ -5,25 +5,83 @@
   <title>Web Sprint 2 Challenge</title>
   <script id="challenge">
     // 👉 CHALLENGE 1
-    function profileActivation(profile, reason) {
-
+   function profileActivation(profile, reason) {
+    if (profile.active) { 
+        if (reason) {
+            profile.active = false; 
+            profile.reason = reason; 
+            return profile;
+        } else {
+            return "confirm status manually"; 
+        }
+    } else { 
+        profile.active = true; 
+        delete profile.reason; 
+        return profile;
     }
+}
+
+
+      
+    
+
 
     // 👉 CHALLENGE 2
     function mineSweeper(grid, x, y) {
-
+      if (x < 1 || x > 3 || y < 1 || y > 3) {
+        return "invalid coordinates";
+    }
+    const symbol = grid[y - 1][x - 1];
+    if (symbol === "🟥") {
+        return "🟥 💀";
+    } else if (symbol === "🟦") {
+        return "🟦 🥳";
+    }
     }
 
     // 👉 CHALLENGE 3
     function booleanize(obj) {
+      for (let prop in obj) {
+    
+    if (prop.length > 9) {
+      return "shorten all prop names to 9 chars or less";
+    }
+
+    
+    if (obj[prop] === 0) {
+      obj[prop] = false;
+    } else if (obj[prop] === 1) {
+      obj[prop] = true;
+    } else if (obj[prop] === null) {
+      delete obj[prop];
+    }
+  }
+
+  return obj;
+
 
     }
 
     // 👉 CHALLENGE 4
     function scrub(text, forbidden) {
-
+  if (!text || forbidden.length === 0) {
+    return text;
+  }
+  const words = text.toLowerCase().split(/\W+/);
+  const scrubbedText = words.map(word => {
+    if (forbidden.includes(word)) {
+      return 'x'.repeat(word.length);
+    } else {
+      return word;
     }
+  });
+  return scrubbedText.join(' ');
+}
 
+  
+    
+
+    
     // 👉 CHALLENGE 5 (bonus, NOT graded)
     function normalizePhoneNumber(num) {
 

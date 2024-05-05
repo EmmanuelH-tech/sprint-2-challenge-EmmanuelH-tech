@@ -28,7 +28,7 @@ Example:
 ```
 
 The grid is interpreted with `x` and `y` coordinates ranging from 1 to 3.
-- `x = 1` and `y = 1` represents the top-left square.
+- `x = 1` and `y = 1` represents the top-left square.   
 - `x = 3` and `y = 1` represents the top-right square.
 - `x = 3` and `y = 3` represents the bottom-right square.
 
@@ -53,7 +53,7 @@ console.log(result);
 
 #### Example 2: Landing on a Safe Spot
 ```javascript
-let grid = [["🟥", "🟦", "🟥"], ["🟦", "🟥", "🟥"], ["🟥", "🟦", "🟦"]];
+let grid = [["🟥", "🟦", "🟥"], ["🟦", "🟥", "🟥"], ["🟥", "🟦", "🟦"]]; cx 
 let result = mineSweeper(grid, 2, 3);
 console.log(result); 
 ```
